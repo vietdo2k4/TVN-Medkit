@@ -1,0 +1,229 @@
+:root {
+    --font-app: "Be Vietnam Pro", Inter, system-ui, -apple-system, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    --text-strong: #0a2f5a;
+    --chev: #0a57a3;
+    --bd: #d6e8f8;
+    --shadow: 0 16px 40px rgba(6, 55, 110, .10);
+    --shadow-focus: 0 18px 44px rgba(6, 55, 110, .14);
+}
+
+/* ===== Filters (select + reset) ===== */
+.docspg__filters {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 12px auto 10px;
+    margin-bottom: 32px;
+    max-width: 1000px;
+}
+
+:where(.doctors-page) .doc-select,
+:where(.doctors-page) .doc-select option,
+:where(.doctors-page) .btn-reset {
+    font-family: var(--font-app) !important;
+    font-weight: 800;
+    letter-spacing: .1px;
+    color: var(--text-strong);
+}
+
+:where(.doctors-page) .doc-select {
+    min-width: 240px;
+    height: 44px;
+    padding: 0 14px;
+    border: 1.5px solid var(--bd);
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: var(--shadow);
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image:
+        linear-gradient(45deg, transparent 50%, var(--chev) 50%),
+        linear-gradient(135deg, var(--chev) 50%, transparent 50%);
+    background-position: calc(100% - 22px) 17px, calc(100% - 15px) 17px;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    font-size: 15px;
+}
+
+:where(.doctors-page) .doc-select:focus {
+    box-shadow: var(--shadow-focus);
+}
+
+:where(.doctors-page) .doc-select option {
+    font-weight: 600;
+}
+
+.btn-reset {
+    height: 44px;
+    padding: 0 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(8, 60, 120, .06);
+    cursor: pointer;
+}
+
+/* ===== Common UI ===== */
+:where(.doctors-page) .doc-btn {
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 999px;
+    border: 1px solid #d7e6f6;
+    background: #1fb1f5;
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(8, 60, 120, .12);
+}
+
+:where(.doctors-page) .doc-btn:hover {
+    filter: brightness(.96);
+}
+
+.pager-wrap {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin: 18px 0 6px;
+}
+
+.pager {
+    min-width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    border: 1px solid #d7e6f6;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(8, 60, 120, .06);
+    font-weight: 800;
+    color: var(--text-strong);
+}
+
+.pager.active {
+    background: #00b3ff;
+    color: #fff;
+    border-color: #00b3ff;
+}
+
+/* ===== List layout ===== */
+.doclist {
+    display: grid;
+    gap: 14px;
+}
+
+.doclist--2col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width:768px) {
+    .doclist--2col {
+        grid-template-columns: 1fr;
+    }
+
+    .docspg__filters {
+        margin-bottom: 24px;
+    }
+}
+
+:where(.doctors-page) .doc-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 14px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 14px;
+    border: 1px solid #e6eef7;
+    box-shadow: 0 12px 26px rgba(8, 60, 120, .06);
+    min-height: 110px;
+}
+
+:where(.doctors-page) .doc-card__left {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+:where(.doctors-page) .doc-card__avatar {
+    width: 74px;
+    height: 74px;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+:where(.doctors-page) .doc-card__name {
+    font-weight: 900;
+    color: var(--text-strong);
+    font-size: 18px;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    /* chỉ 1 dòng để đều hàng */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+}
+
+:where(.doctors-page) .doc-card__sub {
+    color: #47627b;
+    font-size: 14px;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    /* chỉ 1 dòng để đều hàng */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+:where(.doctors-page) .doc-card__fee {
+    color: #194569;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+/* ===== Misc ===== */
+.hero-wide {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.docspg__title {
+    text-align: center;
+    margin: 18px 0 8px;
+    color: var(--text-strong);
+    font-weight: 900;
+    font-size: 22px;
+}
+
+:where(.doctors-page) .doc-arrow {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid #d7e6f6;
+    background: #fff;
+    box-shadow: 0 12px 26px rgba(8, 60, 120, .10);
+    cursor: pointer;
+}
+
+.see-all-btn {
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid #d7e6f6;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(8, 60, 120, .06);
+    cursor: pointer;
+    font-weight: 800;
+    color: var(--text-strong);
+}

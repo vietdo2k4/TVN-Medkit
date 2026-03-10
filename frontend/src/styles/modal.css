@@ -1,0 +1,39 @@
+/* src/styles/modal.css */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000
+}
+
+.modal-card {
+    width: min(520px, 92vw);
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+    overflow: hidden
+}
+
+.modal-header {
+    padding: 14px 18px;
+    font-weight: 700;
+    font-size: 18px;
+    background: #00c2ff;
+    color: #fff
+}
+
+.modal-body {
+    padding: 20px;
+    font-size: 15px;
+    color: #111
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    padding: 0 18px 16px
+}

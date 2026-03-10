@@ -1,0 +1,744 @@
+:root {
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 32px;
+    --space-8: 40px;
+}
+
+/* Hero cách đều với phần dưới */
+.hero,
+.hero-bg {
+    margin-bottom: var(--space-7);
+}
+
+/* Tiêu đề section đồng nhất */
+.section__title {
+    margin: 0 0 var(--space-4);
+    font-size: 20px;
+}
+
+/* Khối section theo container */
+.container {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.section {
+    padding-block: var(--space-6);
+}
+
+.section+.section {
+    margin-top: var(--space-7);
+}
+
+/* Lưới dịch vụ + chuyên khoa + cơ sở: cùng gap và margin */
+.cards-4,
+.spec-grid,
+.grid-4 {
+    gap: var(--space-4);
+    margin: var(--space-6) auto 0;
+}
+
+/* Danh sách lợi ích trong hero: sát nhau vừa đủ */
+.benefits-list {
+    margin-top: var(--space-4);
+}
+
+.benefits-list li {
+    margin: var(--space-2) auto;
+}
+
+/* Khoảng dưới mỗi card-list cho thoáng trước phần kế tiếp */
+.container+.container {
+    margin-top: var(--space-7);
+}
+
+/* Footer cách phần trên đồng nhất */
+.footer {
+    margin-top: var(--space-8);
+}
+
+/* Tiêu đề các section to và in hoa */
+.section__title {
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: left;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--space-6);
+    color: #0d3a5c;
+}
+
+/* Tính năng chính (4 box) */
+/* Lưới cho 4 tính năng ở trang chủ */
+.section .container.cards-4 {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(240px, 1fr));
+    /* desktop 4 cột */
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Tablet 2–3 cột, Mobile 1 cột */
+@media (max-width: 1200px) {
+    .section .container.cards-4 {
+        grid-template-columns: repeat(3, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .section .container.cards-4 {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .section .container.cards-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Gỡ kiểu full-width mặc định của ServiceCard */
+.section .container.cards-4>* {
+    width: auto !important;
+    /* thay vì 100% */
+    flex: initial !important;
+    /* nếu ServiceCard dùng flex:1 */
+}
+
+.service-card {
+    width: 100%;
+    /* card chiếm cột, không kéo full hàng */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+    background: #fff;
+    padding: 20px;
+}
+
+
+
+/* Bộ lọc nằm ngay dưới thanh tìm kiếm ở trang /search */
+
+/* Danh sách bác sĩ */
+.doctor-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Card dạng hàng ngang */
+.doctor-row {
+    width: 90%;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.doc-info {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.doc-avatar {
+    width: 75px;
+    height: 75px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: #eef5ff;
+}
+
+.doc-name {
+    font-weight: 700;
+    font-size: 17px;
+    color: #0b2a57;
+}
+
+.doc-sub {
+    font-size: 14px;
+    color: #4a5c73;
+}
+
+.btn-book {
+    background: linear-gradient(to right, #1f95f5, #c020e6);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-book:hover {
+    filter: brightness(0.95);
+}
+
+@media (max-width: 600px) {
+    .doctor-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .btn-book {
+        align-self: flex-end;
+    }
+}
+
+/* --- Trang kết quả tìm kiếm bác sĩ --- */
+.search-page {
+    padding: 100px 0 60px;
+    /* hạ thanh search xuống khỏi navbar */
+    background-color: #f9fbff;
+}
+
+/* Giữ khoảng cách cho search bar */
+.search-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Dòng "Đã tìm thấy..." căn giữa */
+.search-result-info {
+    text-align: center;
+    font-weight: 500;
+    color: #083b6b;
+    margin-bottom: 20px;
+}
+
+.filters-inline {
+    max-width: 980px;
+    margin: 10px auto 22px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filters-inline .input {
+    /* override global .input { width:100% } */
+    width: auto !important;
+    flex: 0 0 auto !important;
+    display: inline-flex !important;
+
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    border-radius: 999px;
+    border: 1px solid #e6eff8;
+    background-color: #fff;
+    padding: 0 38px 0 16px;
+    box-shadow: 0 4px 12px rgba(7, 55, 110, .06);
+    color: #0b315a;
+    min-width: 240px;
+    /* chỉnh 200–280 tuỳ bạn */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+}
+
+/* caret custom */
+.filters-inline .input {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23668bb1' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+}
+
+.filters-inline .btn {
+    height: 40px;
+    padding: 0 22px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 999px;
+    border: 1.5px solid #1fb1f5;
+    background: #ffffff;
+    color: #1fb1f5;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(31, 177, 245, 0.15);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:root {
+    --filter-h: 44px;
+    /* cùng chiều cao cho mọi control */
+    --filter-r: 22px;
+    /* bo tròn đồng nhất */
+    --filter-pad-x: 16px;
+    /* padding ngang */
+    --filter-font: 14px;
+}
+
+/* Hover — tô nền xanh nhạt để nổi bật hơn */
+.filters-inline .btn:hover {
+    background: #e6f6ff;
+    box-shadow: 0 4px 14px rgba(31, 177, 245, 0.25);
+    transform: translateY(-1px);
+}
+
+/* Khi nhấn giữ */
+.filters-inline .btn:active {
+    background: #1fb1f5;
+    color: #fff;
+    transform: translateY(0);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .filters-inline .btn {
+        height: 38px;
+        font-size: 13px;
+        padding: 0 18px;
+    }
+}
+
+.header .inner,
+.navbar .inner {
+    max-width: 1440px;
+    /* Đổi 1280/1360/100% tùy layout */
+    margin: 0 auto;
+    padding: 0 24px;
+    /* Tăng/giảm lề trong 2 bên */
+    height: 56px;
+    /* Chiều cao cố định của header */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Khoảng giữa logo, menu, user */
+}
+
+/* Cho phép các phần tử tự co, hỗ trợ ellipsis tên dài */
+.header .inner>*,
+.navbar .inner>* {
+    min-width: 0;
+}
+
+/* 2) Thương hiệu/logo
+   - Đổi màu/độ đậm tại đây */
+.nav__brand {
+    font-weight: 700;
+    text-decoration: none;
+    color: #1fb1f5;
+    /* Màu thương hiệu */
+}
+
+/* 3) Cụm USER ở góc phải
+   - .nav__user là container định vị dropdown tuyệt đối */
+.nav__user {
+    position: relative;
+    display: inline-block;
+    margin-left: 16px;
+    /* Tạo khoảng cách với menu bên trái */
+}
+
+/* 4) NÚT USER (chip)
+   Mục tiêu: gọn, không avatar, chữ căn giữa, caret cố định bên phải
+   - height: chiều cao chip
+   - padding: chừa chỗ cho caret ở mép phải
+   - border/background: style mặc định (outline trắng) */
+.nav__user-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    height: 36px;
+    padding: 0 32px 0 16px;
+    /* Trái 16, phải chừa 32 cho caret */
+    border: 1px solid #e5e7eb;
+    /* Viền xám nhạt */
+    background: #fff;
+    /* Nền trắng */
+    border-radius: 999px;
+    /* Bo tròn dạng pill */
+    line-height: 1;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+/* Ẩn avatar trong chip (không ảnh hưởng avatar nơi khác) */
+.nav__user-btn .avatar {
+    display: none !important;
+}
+
+/* Tên hiển thị: căn giữa, đậm vừa */
+.nav__user-btn .name {
+    max-width: none;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1;
+}
+
+/* Caret luôn bám mép phải của chip */
+.nav__user-btn .caret {
+    position: absolute;
+    right: 10px;
+    font-size: 12px;
+    opacity: .7;
+}
+
+/* 5) TRẠNG THÁI HOVER/FOCUS (mở dropdown)
+   Khi rê chuột vào cụm user hoặc focus trong dropdown:
+   - Chip chuyển nền xanh nhạt, chữ đậm rõ hơn
+   Muốn gradient xanh: đổi background bên dưới. */
+.nav__user:hover .nav__user-btn,
+.nav__user:focus-within .nav__user-btn {
+    background: #eaf7ff;
+    /* Đổi thành: linear-gradient(90deg,#1fb1f5,#00d2ff) để giống nút đặc */
+    border-color: #bfe8ff;
+    color: #127cc7;
+    box-shadow: 0 6px 18px rgba(31, 177, 245, .15);
+}
+
+/* 6) DROPDOWN
+   - Là overlay tuyệt đối, không đẩy cao header
+   - top: khoảng cách so với chip
+   - min-width: độ rộng menu
+   - transition: hiệu ứng xuất hiện */
+.nav__dropdown {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    /* Khoảng cách dropdown với chip */
+    min-width: 220px;
+    /* Đổi theo nhu cầu */
+    background: #fff;
+    border: 1px solid #364561;
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: all .18s ease;
+}
+
+/* Mở dropdown khi hover vào cụm user hoặc đang focus bên trong */
+.nav__user:hover .nav__dropdown,
+.nav__user:focus-within .nav__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* 7) ITEM TRONG DROPDOWN
+   - Sửa padding/hover ở đây
+   - .danger cho nút đăng xuất */
+.nav__dd-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 12px;
+    color: #0b3a5c;
+    text-decoration: none;
+    background: #fff;
+    border: 0;
+    cursor: pointer;
+}
+
+.nav__dd-item:hover {
+    background: #f6fbff;
+}
+
+.nav__dd-item.danger {
+    color: #ef4444;
+}
+
+/* =====ACCOUNT LAYOUT ======== */
+
+.account {
+    background: #f7fbff;
+    /* nền nhẹ toàn trang */
+    padding: 24px 0;
+}
+
+.account__wrap {
+    max-width: 1100px;
+    /* khung trang */
+    margin: 0 auto;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    /* sidebar | nội dung */
+    gap: 20px;
+}
+
+/* --- Sidebar trái: menu hồ sơ, phiếu khám, thông báo --- */
+.account__side {
+    background: #fff;
+    border: 1px solid #e6eef6;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .05);
+}
+
+.side__item {
+    display: block;
+    text-decoration: none;
+    color: #0b3a5c;
+    padding: 12px 14px;
+    border-radius: 10px;
+    margin: 4px 0;
+    font-weight: 600;
+}
+
+.side__item:hover {
+    background: #f1f8ff;
+}
+
+.side__item.active {
+    /* NavLink active */
+    background: #e8f6ff;
+    box-shadow: inset 0 0 0 1px #cfeaff;
+}
+
+/* --- Khu nội dung phải: chứa từng trang con (Outlet) --- */
+.account__main {
+    background: #fff;
+    border: 1px solid #e6eef6;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
+}
+
+/* Tiêu đề trong trang con (tuỳ chọn) */
+.account__main h2 {
+    margin: 0 0 16px;
+    color: #0b3a5c;
+}
+
+/* ========== Phiếu khám ( /me/appointments ) ========== */
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid #e6eef6;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    background: #eef6ff;
+    color: #0b3a5c;
+}
+
+/* ========== Thông báo ( /me/notifications ) ========== */
+.noti-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.noti-list li {
+    border: 1px solid #e6eef6;
+    border-radius: 10px;
+    padding: 12px 14px;
+    background: #fff;
+}
+
+.noti-list li.read {
+    /* thông báo đã đọc */
+    opacity: .75;
+}
+
+.noti-msg {
+    font-weight: 600;
+    color: #0b3a5c;
+}
+
+.noti-time {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+/* === Patient profile: view vs edit === */
+.profile-view {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 1px solid #e6eef6;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.row__label {
+    color: #6b7280;
+}
+
+.row__value {
+    color: #0b3a5c;
+    font-weight: 600;
+}
+
+.profile-form {
+    display: grid;
+    gap: 12px;
+}
+
+.profile-form .btn {
+    border: 1px solid #e6eef6;
+    border-radius: 8px;
+    padding: 10px 16px;
+}
+
+
+/* ===== Phiếu khám bệnh ===== */
+/* Tabs lọc trạng thái */
+.tabs {
+    display: flex;
+    gap: 12px;
+    margin: 12px 0 16px
+}
+
+.tab {
+    padding: 8px 16px;
+    border: 1px solid #e6eff8;
+    border-radius: 999px;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.tab.is-active {
+    background: #e6f6ff;
+    border-color: #bfe8ff
+}
+
+.tab.is-disabled {
+    opacity: .45;
+    cursor: not-allowed
+}
+
+/* Khối rỗng */
+.empty-state {
+    padding: 32px 8px;
+    text-align: center;
+    color: #8293a6
+}
+
+/* Hàng phiếu khám */
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+
+.card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    background: #fff;
+    border: 1px solid #e6eff8;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(7, 55, 110, .06);
+}
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-weight: 600;
+    background: #eef5ff
+}
+
+.badge.paid {
+    background: #e6fff3;
+    color: #0a8f41
+}
+
+.badge.unpaid {
+    background: #fff6e6;
+    color: #b76a00
+}
+
+.badge.completed {
+    background: #e6f6ff;
+    color: #0b6aa9
+}
+
+.badge.cancelled {
+    background: #ffecec;
+    color: #cc2e2e
+}
+
+.muted {
+    color: #8293a6;
+    font-size: 12px
+}
+
+.empty-illust {
+    width: 440px;
+    /* trước 360px */
+    max-width: 95vw;
+}
+
+.empty-state {
+    text-align: center;
+    color: #8293a6;
+    padding: 32px 8px
+}
+
+.empty-state svg {
+    display: block;
+    margin: 8px auto 12px
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 900px) {
+    .account__wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .account__side {
+        position: sticky;
+        top: 60px;
+        z-index: 1;
+    }
+
+    .card-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

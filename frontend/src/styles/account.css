@@ -1,0 +1,128 @@
+:root {
+    --acc-primary: #00bdf2;
+}
+
+/* xanh như web */
+.acc-shell {
+    max-width: 1200px;
+    margin: 16px auto;
+    padding: 0 16px
+}
+
+.acc-grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 20px
+}
+
+.acc-side {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 12px;
+    position: sticky;
+    top: 12px;
+    height: max-content
+}
+
+.acc-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.acc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #0b1320;
+    border: 1px solid transparent
+}
+
+.acc-item:hover {
+    background: #f0f9ff
+}
+
+.acc-item.active {
+    background: #e6f6ff;
+    border-color: #bae6fd
+}
+
+.acc-item.active .acc-text {
+    color: var(--acc-primary);
+    font-weight: 600
+}
+
+.acc-item.active .acc-ic {
+    color: var(--acc-primary)
+}
+
+.acc-ic {
+    width: 18px;
+    height: 18px;
+    color: #111827;
+    flex: 0 0 auto
+}
+
+.acc-text {
+    flex: 1 1 auto
+}
+
+.acc-badge {
+    background: #ef4444;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 7px;
+    border-radius: 999px;
+    line-height: 1
+}
+
+.acc-main {
+    min-height: 480px
+}
+
+.acc-h1 {
+    margin: 4px 0 14px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0b1320
+}
+
+/* breadcrumb: cùng màu, cùng font với web */
+.acc-bc {
+    font-size: 14px;
+    margin: 10px 0 16px
+}
+
+.acc-bc-link {
+    color: #0b1320;
+    text-decoration: none;
+    font-weight: 600
+}
+
+.acc-bc-link:hover {
+    text-decoration: underline
+}
+
+.acc-bc-sep {
+    margin: 0 6px;
+    color: #94a3b8
+}
+
+.acc-bc-cur {
+    color: var(--acc-primary);
+    font-weight: 600
+}
+
+@media (max-width: 900px) {
+    .acc-grid {
+        grid-template-columns: 1fr
+    }
+
+    .acc-side {
+        position: static
+    }
+}

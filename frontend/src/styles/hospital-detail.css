@@ -1,0 +1,402 @@
+/* ========== LAYOUT ========== */
+.hosp-detail {
+    margin-top: 8px
+}
+
+.hgrid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 16px
+}
+
+@media (max-width:960px) {
+    .hgrid {
+        grid-template-columns: 1fr
+    }
+}
+
+/* ========== COMMON CARDS ========== */
+.hcard,
+.hbanner {
+    background: #fff;
+    border: 1px solid #e7f1fb;
+    border-radius: 18px;
+    box-shadow: 0 12px 22px rgba(8, 60, 120, .06)
+}
+
+.hservice,
+.hdoc,
+.sp-card,
+.habout__text {
+    background: #fff;
+    border: 1px solid #e7f1fb;
+    border-radius: 16px;
+    box-shadow: 0 10px 22px rgba(8, 60, 120, .06)
+}
+
+/* ========== LEFT CARD ========== */
+.hcard {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.hcard__logo {
+    display: grid;
+    place-items: center
+}
+
+.hcard__logo img {
+    width: 140px;
+    height: 80px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #eef4fc
+}
+
+.hcard__name {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #0a2f5a
+}
+
+.hcard__rating {
+    display: flex;
+    align-items: center;
+    gap: 6px
+}
+
+.hval {
+    color: #ffb800;
+    font-weight: 700
+}
+
+.hstar {
+    color: #cfd8e3
+}
+
+.hstar.is-on {
+    color: #ffb800
+}
+
+.hcard__row {
+    display: flex;
+    gap: 8px;
+    color: #47627b;
+    font-size: 14px
+}
+
+.hcard__btn {
+    width: 100%;
+    margin-top: 8px
+}
+
+/* ========== RIGHT BANNER ========== */
+.hbanner {
+    padding: 12px;
+    display: grid;
+    grid-template-rows: 320px auto;
+    gap: 10px;
+    background: #f7fbff
+}
+
+.hbanner__img {
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center
+}
+
+.hbanner__bullets {
+    color: #194569;
+    font-size: 15px;
+    display: grid;
+    gap: 6px
+}
+
+/* ========== SERVICES (SPECIALTIES IN HOSPITAL) ========== */
+.hsec__title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0a2f5a;
+    margin: 18px 0 10px
+}
+
+.hservices__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 18px;
+    margin-top: 14px
+}
+
+.hservice {
+    padding: 18px 10px;
+    text-align: center;
+    cursor: default;
+    transition: .2s
+}
+
+.hservice--clickable {
+    cursor: pointer
+}
+
+.hservice--clickable:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(8, 60, 120, .12)
+}
+
+.hservice__icon {
+    font-size: 22px
+}
+
+.hservice__icon img {
+    width: 46px;
+    height: 46px
+}
+
+.hservice__name {
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #073b74
+}
+
+.hservice__sub {
+    font-size: 13px;
+    margin-top: 4px;
+    color: #5b7a97
+}
+
+/* ========== ABOUT ========== */
+.habout__text {
+    padding: 14px;
+    color: #1f3346
+}
+
+/* ========== DOCTORS OF HOSPITAL ========== */
+.hdoc__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px
+}
+
+@media (max-width:960px) {
+    .hdoc__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+}
+
+.hdoc {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.hdoc__top {
+    display: grid;
+    place-items: center;
+    padding: 12px;
+    background: #f7fbff
+}
+
+.hdoc__avatar {
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #eef4fc;
+    background: #fff
+}
+
+.hdoc__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    gap:10px;
+}
+
+.hdoc__name {
+    font-weight: 800;
+    color: #0a2f5a;
+    margin-top: 1.3;
+    line-height: 1.3;
+
+}
+
+.hdoc__sub {
+    font-size: 15px;
+    color: #6a86a0
+}
+
+.hdoc__fee {
+    font-size: 15px;
+    color: #0b5ea8;
+    line-height: 1.3;
+}
+
+.hdoc__btn {
+    margin-top: auto;
+    width: 100%;
+}
+
+/* ========== MISC ========== */
+.hmuted {
+    color: #6a86a0
+}
+
+/* Slider ảnh phụ (nếu dùng) */
+.hslider {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f1f8ff;
+    height: 320px;
+    display: grid;
+    place-items: center
+}
+
+.hslide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.hslide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.hslide-arrow.doc-arrow--left {
+    left: 8px
+}
+
+.hslide-arrow.doc-arrow--right {
+    right: 8px
+}
+
+.hdots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px
+}
+
+.hdot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #cfe8ff;
+    cursor: pointer
+}
+
+.hdot.is-on {
+    background: #1194e8
+}
+
+/* ========== HOSPITAL SPECIALTY GRID (mini) ========== */
+.sp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+    margin-top: 14px
+}
+
+.sp-card {
+    appearance: none;
+    border: 0;
+    width: 100%;
+    padding: 18px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease;
+    text-align: center
+}
+
+.sp-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(8, 60, 120, .12)
+}
+
+.sp-iconwrap {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #eef6ff;
+    display: grid;
+    place-items: center
+}
+
+.sp-iconwrap img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain
+}
+
+.sp-name {
+    max-width: 12ch;
+    font-size: 15px;
+    font-weight: 800;
+    color: #073b74;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden
+}
+
+/* ========== TYPOGRAPHY NORMALIZATION ========== */
+.sp-card,
+.sp-name,
+.hservice__sub {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.habout__list {
+    list-style: none;
+    margin: 0;
+    padding: 14px 16px;
+    background: #fff;
+    border: 1px solid #e7f1fb;
+    border-radius: 16px;
+    box-shadow: 0 10px 22px rgba(8, 60, 120, .06);
+    color: #1f3346;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.habout__list li {
+    display: block;
+    margin: 6px 0 8px;
+}
+
+.habout__label {
+    font-weight: 800;
+    color: #0a2f5a;
+    margin-right: 4px;
+    white-space: nowrap;
+    /* Nhãn gọn, dính liền dấu ":" */
+}
+
+/* Giữ style cũ làm fallback cho trường hợp không parse được */
+.habout__text {
+    padding: 14px;
+    color: #1f3346;
+    background: #fff;
+    border: 1px solid #e7f1fb;
+    border-radius: 16px;
+    box-shadow: 0 10px 22px rgba(8, 60, 120, .06);
+    font-size: 15px;
+    line-height: 1.7;
+}

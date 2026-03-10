@@ -1,0 +1,71 @@
+/* căn dưới đã có: footer { margin-top:auto } */
+
+/* Hành động nhỏ trên form */
+.auth-actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.remember {
+    font-size: 14px;
+    color: #334;
+}
+
+.link {
+    color: #1b7bd6;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Social (tùy chọn) */
+.social-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.btn.social {
+    background: #f4f7fb;
+    color: #0d3a5c;
+    border: 1px solid #dfe9f6;
+}
+
+.btn.social.google {
+    background: #ffeceb;
+    border-color: #ffd4d1;
+}
+
+.btn.social.facebook {
+    background: #eaf2ff;
+    border-color: #cfe3ff;
+}
+
+/* Bullets bên phải */
+.auth-bullets {
+    margin-top: 16px;
+    text-align: left;
+    color: #0d3a5c;
+    line-height: 1.5;
+}
+
+.auth-bullets li {
+    margin: 6px 0;
+}
+
+/* Responsive: xếp dọc */
+@media (max-width: 900px) {
+    .auth-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .social-row {
+        grid-template-columns: 1fr;
+    }
+}

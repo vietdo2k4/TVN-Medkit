@@ -1,0 +1,91 @@
+/* Khối chứa & canh giữa */
+.search-container {
+    display: flex;
+    justify-content: center;
+    position: relative
+}
+
+.search-wrap {
+    position: relative;
+    width: min(1180px, 96%)
+}
+
+/* Form tìm kiếm */
+.search-form {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 999px;
+    padding: 8px 10px;
+    border: 1.5px solid #d6e8f8;
+    box-shadow: 0 16px 40px rgba(6, 55, 110, .15);
+}
+
+.search-input-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .7;
+}
+
+.search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 12px 14px 12px 40px;
+    font-size: 16px;
+}
+
+.search-btn {
+    background: #1fb1f5;
+    color: #fff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    filter: brightness(.96);
+}
+
+.hero-wide {
+    display: flex;
+    justify-content: center
+}
+
+.hero-wide .search-wrap {
+    width: min(1180px, 96%) !important
+}
+
+/* mở rộng chiều ngang */
+.hero-wide .container {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0
+}
+
+.hero-wide .search-wrap {
+    flex: 0 0 auto
+}
+
+/* Mobile */
+@media (max-width:768px) {
+    .search-form {
+        flex-direction: column;
+        border-radius: 18px;
+    }
+
+    .search-btn {
+        width: 100%;
+        margin-top: 8px;
+    }
+}

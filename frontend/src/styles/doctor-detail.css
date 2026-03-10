@@ -1,0 +1,146 @@
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+.dd-card {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: 0 8px 24px rgba(6, 55, 110, .08);
+}
+
+.dd-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #f3f8ff;
+    border: 2px solid #e6eef8;
+}
+
+.dd-name {
+    margin: 0 0 6px;
+    color: #0b3c66;
+}
+
+.dd-badges {
+    display: flex;
+    gap: 8px;
+    margin: 6px 0 10px;
+}
+
+.chip {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 999px;
+    background: #e9f4ff;
+    color: #0b6bb3;
+    font-size: 14px;
+    border: 2px solid #cfe7ff;
+}
+
+.dd-row {
+    margin: 6px 0;
+}
+
+.dd-label {
+    color: #4a5568;
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.dd-note {
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.dd-note--warn {
+    background: #fff4f4;
+    color: #a53737;
+    border: 1px solid #ffd7d7;
+}
+
+.dd-section {
+    margin-top: 22px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: 0 8px 24px rgba(6, 55, 110, .06);
+}
+
+.dd-bio {
+    margin: 8px 0 0 18px;
+}
+
+.linklike {
+    background: none;
+    border: none;
+    color: #0aa0e6;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 8px;
+}
+
+
+.dd-picker ul,
+.dd-picker ol {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+
+.dd-picker img[src=""],
+.dd-picker img[src="#"],
+.dd-picker img:not([src]),
+.dd-picker img[src^="about:blank"] {
+    display: none !important;
+}
+
+
+.dd-picker {
+    margin-top: 16px;
+}
+
+.dd-picker img {
+    max-width: 100%;
+    height: auto;
+}
+
+.dd-picker :where(ul, ol) {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.dd-picker :where(li) {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dd-picker *::marker {
+    content: "" !important;
+}
+
+.doctor-detail *::marker {
+    content: "" !important;
+}
+
+/* diệt mọi bullet/marker trong trang chi tiết */
+
+/* bật lại bullet cho mục Giới thiệu */
+.doctor-detail .dd-bio {
+    list-style: disc !important;
+    padding-left: 18px;
+}
+
+.doctor-detail .dd-bio li::marker {
+    content: initial !important;
+}

@@ -1,0 +1,129 @@
+/* src/styles/appointment-detail.css — concise & unified */
+
+/* Card */
+.apd-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(6, 55, 110, .06);
+    padding: 18px 20px
+}
+
+.apd-card.apd-embed {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0
+}
+
+/* Grid */
+.apd-rows {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 22px
+}
+
+.apd-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px dashed #e6eef8
+}
+
+.apd-row--span {
+    grid-column: 1 / span 2
+}
+
+.apd-row--total {
+    grid-column: 1 / span 2
+}
+
+.apd-row--code {
+    grid-column: 1 / span 2
+}
+
+.apd-sep {
+    grid-column: 1 / span 2;
+    height: 1px;
+    background: #eaf1fb;
+    margin: 6px 0
+}
+
+/* Typography — unified colors/fonts for all rows */
+.apd-key {
+    color: #38556f;
+    font-weight: 700
+}
+
+.apd-val {
+    color: #0b2239;
+    font-weight: 600;
+    text-align: right
+}
+
+.apd-price {
+    font-weight: 800
+}
+
+.apd-code {
+    font-weight: 800;
+    letter-spacing: .5px
+}
+
+/* Chips */
+.apd-chip {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    background: #eef2f7;
+    color: #334155
+}
+
+.apd-chip.pending,
+.apd-chip.confirmed {
+    background: #eaf7ff;
+    color: #0369a1
+}
+
+.apd-chip.completed,
+.apd-chip.paid {
+    background: #e7f8e9;
+    color: #0a6b2b
+}
+
+.apd-chip.cancelled {
+    background: #ffe7e7;
+    color: #b42318
+}
+
+.apd-chip.unpaid {
+    background: #fff1c2;
+    color: #7a5b00
+}
+
+.apd-chip.neutral {
+    background: #f1f5f9;
+    color: #334155
+}
+
+/* Notice line above the card (lock message) */
+.appt__notice {
+    margin: 12px 0
+}
+
+.appt__notice--lock {
+    display: flex
+}
+
+/* Mobile */
+@media (max-width:880px) {
+    .apd-rows {
+        grid-template-columns: 1fr
+    }
+
+    .apd-val {
+        text-align: left
+    }
+}

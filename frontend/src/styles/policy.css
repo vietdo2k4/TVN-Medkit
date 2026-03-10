@@ -1,0 +1,132 @@
+
+:root {
+    --tvn-text: #0f3552;
+    /* chữ chính */
+    --tvn-muted: #5f7790;
+    /* chữ phụ */
+    --tvn-accent: #0ea5e9;
+    /* xanh điểm nhấn */
+    --tvn-bg: #f4f8fd;
+    /* nền nhạt site */
+    --tvn-card: #ffffff;
+    /* nền thẻ trắng */
+    --tvn-border: #e6eef7;
+    /* viền nhạt */
+    --tvn-shadow: 0 6px 24px rgba(15, 53, 82, 0.06);
+}
+
+/* vùng chính sách nằm trong container sẵn của site */
+.policy {
+    padding: 28px 0 56px;
+    color: var(--tvn-text);
+}
+
+/* tiêu đề trang */
+.policy h1 {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--tvn-text);
+    margin: 4px 0 8px;
+}
+
+/* meta nhỏ dưới H1 (ngày hiệu lực…) */
+.policy__meta {
+    color: var(--tvn-muted);
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+/* mỗi section trình bày như 1 card nội dung */
+.policy section {
+    background: var(--tvn-card);
+    border: 1px solid var(--tvn-border);
+    border-left: 4px solid var(--tvn-accent);
+    border-radius: 16px;
+    box-shadow: var(--tvn-shadow);
+    padding: 18px 18px 14px;
+    margin: 14px 0;
+}
+
+/* tiêu đề mục trong card */
+.policy h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 2px 0 8px;
+    color: var(--tvn-text);
+}
+
+/* đoạn & danh sách */
+.policy p,
+.policy li {
+    color: var(--tvn-text);
+    line-height: 1.7;
+    font-size: 15.5px;
+}
+
+.policy ul {
+    padding-left: 18px;
+    margin: 6px 0 4px;
+    list-style: disc;
+}
+
+.policy a {
+    color: var(--tvn-accent);
+    text-underline-offset: 2px;
+}
+
+.policy a:hover {
+    opacity: .9;
+}
+
+/* nhấn nhẹ các box trích dẫn nếu có */
+.policy blockquote {
+    margin: 10px 0;
+    padding: 10px 14px;
+    border-left: 4px solid var(--tvn-accent);
+    background: #f0f8ff;
+    border-radius: 10px;
+    color: var(--tvn-text);
+}
+
+/* inline code nếu mô tả thuật ngữ/ký hiệu */
+.policy code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 85%;
+    background: #eef6fd;
+    border: 1px solid var(--tvn-border);
+    border-radius: 6px;
+    padding: 2px 6px;
+}
+
+/* Badge nhỏ dùng khi cần (không bắt buộc) */
+.policy .badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #075985;
+    background: #e0f2fe;
+    border: 1px solid #bae6fd;
+    border-radius: 999px;
+    padding: 4px 8px;
+}
+
+/* responsive tinh gọn */
+@media (max-width: 768px) {
+    .policy {
+        padding: 18px 0 40px;
+    }
+
+    .policy h1 {
+        font-size: 24px;
+    }
+
+    .policy section {
+        padding: 16px 14px 12px;
+        border-radius: 14px;
+    }
+
+    .policy h2 {
+        font-size: 17px;
+    }
+}

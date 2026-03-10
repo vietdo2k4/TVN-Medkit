@@ -1,0 +1,126 @@
+/* --- Footer (compact, consistent with site look & feel) --- */
+.footer {
+    background: #f6f9fe;
+    border-top: 1px solid #e6eef7;
+    font-family: inherit;
+}
+
+.footer__grid {
+    display: grid;
+    /* tăng spacing giữa các phần một chút */
+    gap: 36px 48px;
+    padding: 40px 0;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1024px) {
+    .footer__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .footer__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.footer__brand {
+    max-width: 420px;
+}
+
+.footer__logo {
+    display: inline-block;
+    font-weight: 800;
+    font-size: 22px;
+    color: #0f3552;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+/* mô tả nền tảng – tăng cỡ chữ lên một chút */
+.footer__muted {
+    margin: 2px 0;
+    color: #57708d;
+    font-size: 15.5px;
+    line-height: 1.55;
+}
+
+.footer__title {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f3552;
+}
+
+/* danh sách link nhỏ hơn, đồng bộ font */
+.footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.footer__list li {
+    margin: 6px 0;
+}
+
+.footer__list a {
+    color: #0f3552;
+    text-decoration: none;
+}
+
+.footer__list a:hover {
+    text-decoration: underline;
+}
+
+.footer__socials {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.footer__social {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #1877f2;
+    /* xanh Facebook cho cả icon */
+    background: #fff;
+    border: 1px solid #e6eef7;
+    box-shadow: 0 2px 10px rgba(2, 30, 84, 0.06);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.footer__social:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(2, 30, 84, 0.12);
+}
+
+.footer__social svg {
+    width: 18px;
+    height: 18px;
+}
+
+.footer__bottom {
+    border-top: 1px dashed #e6eef7;
+    background: #f2f7ff;
+}
+
+.footer__bottom-inner {
+    padding: 14px 0 18px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: #0f3552;
+    font-size: 14px;
+    /* dòng credit nhỏ, gọn */
+}
+
+.footer__sep {
+    opacity: .6;
+}

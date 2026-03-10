@@ -1,0 +1,192 @@
+/* ===== Container & Header ===== */
+.noti-wrap {
+    max-width: 880px;
+    margin: 0 auto
+}
+
+.noti-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px
+}
+
+.noti-tabs {
+    display: flex;
+    gap: 8px
+}
+
+.noti-tabs button {
+    padding: 8px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 999px;
+    background: #fff;
+    cursor: pointer
+}
+
+.noti-tabs button.on {
+    background: #e6f6ff;
+    border-color: #bae6fd;
+    color: #00bdf2;
+    font-weight: 600
+}
+
+.noti-markall {
+    border: 0;
+    background: #f3f4f6;
+    border-radius: 10px;
+    padding: 8px 12px;
+    cursor: pointer
+}
+
+/* ===== List ===== */
+.noti-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.noti-item {
+    display: flex;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid #eef2f7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    cursor: pointer
+}
+
+.noti-item:hover {
+    background: #f8fbff
+}
+
+.noti-item.read {
+    opacity: .85
+}
+
+.noti-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #00bdf2;
+    margin-top: 10px;
+    flex: 0 0 auto
+}
+
+.noti-item.read .noti-dot {
+    background: #d1d5db
+}
+
+.noti-body {
+    flex: 1
+}
+
+.noti-msg {
+    color: #0b1320
+}
+
+.noti-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 6px
+}
+
+.noti-link {
+    color: #00bdf2
+}
+
+.noti-loading {
+    color: #64748b;
+    text-align: center;
+    padding: 12px
+}
+
+/* ===== Pager (nút số + mũi tên, không có nền dài) ===== */
+.noti-wrap .pager {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 16px 0 8px;
+    border-radius: 0 !important
+}
+
+.noti-wrap .pager::before,
+.noti-wrap .pager::after {
+    content: none !important;
+    display: none !important
+}
+
+.pager {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 16px 0 8px
+}
+
+.pager button {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid #e6eef8;
+    border-radius: 10px;
+    background: #fff;
+    color: #0b1320;
+    font-weight: 600;
+    line-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(10, 47, 90, .06);
+    transition: background .15s, box-shadow .15s, border-color .15s, color .15s, opacity .15s
+}
+
+.pager button:hover:not(:disabled):not(.on) {
+    background: #f7fbff
+}
+
+.pager button.on {
+    background: #10b7ff;
+    border-color: #10b7ff;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(16, 183, 255, .35)
+}
+
+.pager button:disabled {
+    opacity: .45;
+    cursor: default
+}
+
+/* Prev/Next thành chevron, ẩn chữ nhưng vẫn hỗ trợ SR */
+.pager button:first-child,
+.pager button:last-child {
+    position: relative;
+    overflow: hidden;
+    text-indent: -9999px
+}
+
+.pager button:first-child::before,
+.pager button:last-child::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    line-height: 1;
+    text-indent: 0;
+    color: inherit
+}
+
+.pager button:first-child::before {
+    content: "‹"
+}
+
+.pager button:last-child::before {
+    content: "›"
+}

@@ -1,0 +1,17 @@
+<!-- filename: public/icons/specialties/ngoai-tong-quat.svg -->
+<!-- General Surgery – Scalpel + suture needle (28x28), fixed brand color -->
+<svg width="28" height="28" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <g fill="none" stroke="#4C6FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- curved suture needle -->
+    <path d="M6.2 16.5c3-2.2 8-2.2 11 0"/>
+    <!-- trailing suture thread -->
+    <path d="M17.2 16.5c1 .6 2 1.5 2.6 2.6"/>
+    <!-- scalpel (rotated) -->
+    <g transform="rotate(-45 12 12)">
+      <!-- handle -->
+      <rect x="6.8" y="11.0" width="6.8" height="2.2" rx="1.1"/>
+      <!-- blade (wedge) -->
+      <path d="M13.6 12.1 L17.2 12 15.4 10.2"/>
+    </g>
+  </g>
+</svg>

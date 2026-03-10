@@ -1,0 +1,35 @@
+:root {
+    --brand: #2aa6df;
+    --brand-700: #1e88c5;
+    --bg: #f5f9ff;
+    --text: #0b2239;
+    --muted: #64748b;
+    --ring: rgba(42, 166, 223, .35);
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body,
+#root {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial;
+    color: var(--text);
+    background: var(--bg)
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+img {
+    max-width: 100%;
+    display: block
+}
