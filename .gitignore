@@ -26,3 +26,11 @@ dist-ssr
 # Env files
 .env
 **/.env
+.agent
+.github
+.skillsrc
+AGENTS.md
+UPGRADE_GUIDE_VN.md
+cron.lnk
+UPGRADE_GUIDE_VN.md
+AGENTS.md

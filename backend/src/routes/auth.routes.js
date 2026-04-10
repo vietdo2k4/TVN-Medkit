@@ -38,8 +38,9 @@ router.post("/register", async (req, res) => {
 
         const hash = await bcrypt.hash(password, 10);
 
+        // Đăng ký xong → active ngay, không cần OTP
         const [uRes] = await conn.query(
-            "INSERT INTO users(email,password_hash,role,status) VALUES(?,?,'patient','pending')",
+            "INSERT INTO users(email,password_hash,role,status) VALUES(?,?,'patient','active')",
             [email, hash]
         );
 
@@ -50,22 +51,13 @@ router.post("/register", async (req, res) => {
             [userId, full_name]
         );
 
-        // ===== OTP =====
-        const otp = generateOTP();
-        const expiresAt = otpExpiry();
-
-        await conn.query(
-            "INSERT INTO email_otps(user_id,email,otp_code,expires_at) VALUES(?,?,?,?)",
-            [userId, email, otp, expiresAt]
-        );
-
         await conn.commit();
 
+        // Trả token + user giống /login để FE navigate ngay
+        const user = { id: userId, role: "patient", email };
+        const token = makeToken(user);
 
-        return res.json({
-            code: "OTP_SENT",
-            message: "Vui lòng kiểm tra email để xác nhận"
-        })
+        return res.status(201).json({ token, user: toUserPayload(user) });
     } catch (e) {
         await conn.rollback();
         console.error(e);
